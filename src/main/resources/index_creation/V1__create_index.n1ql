@@ -1,0 +1,10 @@
+CREATE PRIMARY INDEX `#primary_customers` ON `customers`
+WITH { "defer_build" : true };
+
+CREATE PRIMARY INDEX `#primary_orders` ON `orders`
+WITH { "defer_build" : true };
+
+CREATE PRIMARY INDEX `#primary_books` ON `books`
+WITH { "defer_build" : true };
+
+BUILD INDEX ON `books`(`#primary_books`,`#primary_customers`,`#primary_orders`) USING GSI;

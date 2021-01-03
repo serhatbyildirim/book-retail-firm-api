@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Book-Retail-Firm
+  couchbase:
+    bootstrap-hosts: localhost
+    bucket:
+      name: books
+      password: 123qwe
+    env:
+      timeouts:
+        connect: 10000ms
+  main:
+    allow-bean-definition-overriding: true
+info:
+  name: ${spring.application.name}
+  environment: ${spring.profiles.active}
+
+security.token.secret.key: Asjfwol2asf123142Ags1k23hnSA36as6f4qQ324FEsvb
+
